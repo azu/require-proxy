@@ -90,14 +90,14 @@ const requireOndemand = <T extends any>(path: string) => {
 
 // tests
 const bigquery = requireOndemand("@google-cloud/bigquery");
-console.log("bigquery", bigquery);
 const query = bigquery();
-console.log(query);
+console.log("bigquery", query);
 
 const lodash = requireOndemand("lodash");
-console.log("lodash", lodash);
 const u = lodash.uniq([1, 2, 3, 3, 4]);
 console.log(u);
+console.log("lodash.VERSION", lodash.VERSION);
+console.log("lodash.uniq", lodash.uniq);
 
 const A = requireOndemand("./class");
 const a = new A();
