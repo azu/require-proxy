@@ -1,0 +1,33 @@
+{
+  "license": "MIT",
+  "author": "azu",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "types": "lib/require-proxy.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha \"test/**/*.{js,ts}\"",
+    "watch": "tsc -p . --watch",
+    "run": "ts-node test.ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^13.1.1",
+    "cross-env": "^6.0.3",
+    "mocha": "^6.2.2",
+    "ts-node": "^8.5.4",
+    "ts-node-test-register": "^8.0.1",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "1.0.0",
+    "lodash": "^4.17.15"
+  }
+}
